@@ -10,7 +10,7 @@ This portfolio showcases my work across:
 - ☸️ **Kubernetes & Cloud** — AWS, containerization, infrastructure as code
 - 📊 **Data Pipelines** — PySpark, Azure, turning data into insights
 
-Currently working at **Capgemini** on platform infrastructure for clients like ASML and HEMA.
+Currently working at **Capgemini** on platform infrastructure for clients.
 
 ## 🎯 Explore the Full Portfolio
 
