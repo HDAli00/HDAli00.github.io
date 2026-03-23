@@ -9,65 +9,69 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #eeece9;
-      --surface:   #f7f6f4;
-      --surface2:  #edeae6;
-      --card:      #ffffff;
-      --border:    #d8d4cf;
-      --border-lt: #e4e0db;
-      --text:      #111827;
-      --text-2:    #4b5563;
-      --text-3:    #9ca3af;
-      --teal:      #0f766e;
-      --teal-lt:   rgba(15,118,110,0.09);
-      --teal-bd:   rgba(15,118,110,0.28);
-      --blue:      #1d4ed8;
-      --blue-lt:   rgba(29,78,216,0.08);
-      --blue-bd:   rgba(29,78,216,0.25);
-      --amber:     #92400e;
-      --amber-lt:  rgba(146,64,14,0.08);
-      --amber-bd:  rgba(146,64,14,0.25);
-      --purple:    #4c1d95;
-      --purple-lt: rgba(76,29,149,0.08);
-      --purple-bd: rgba(76,29,149,0.25);
-      --green:     #065f46;
-      --green-lt:  rgba(6,95,70,0.09);
-      --green-bd:  rgba(6,95,70,0.28);
-      --font-d:    'DM Serif Display', Georgia, serif;
-      --font-b:    'Outfit', system-ui, sans-serif;
-      --font-m:    'DM Mono', 'Courier New', monospace;
+      --bg:       #eeece9;
+      --surface:  #f7f6f4;
+      --surface2: #edeae6;
+      --card:     #ffffff;
+      --border:   #d8d4cf;
+      --blt:      #e4e0db;
+      --text:     #111827;
+      --t2:       #4b5563;
+      --t3:       #9ca3af;
+      --teal:     #0f766e;
+      --teal-lt:  rgba(15,118,110,0.09);
+      --teal-bd:  rgba(15,118,110,0.28);
+      --blue:     #1d4ed8;
+      --blue-lt:  rgba(29,78,216,0.08);
+      --blue-bd:  rgba(29,78,216,0.25);
+      --amber:    #92400e;
+      --amber-lt: rgba(146,64,14,0.08);
+      --amber-bd: rgba(146,64,14,0.25);
+      --purple:   #4c1d95;
+      --purple-lt:rgba(76,29,149,0.08);
+      --purple-bd:rgba(76,29,149,0.25);
+      --green:    #065f46;
+      --green-lt: rgba(6,95,70,0.09);
+      --green-bd: rgba(6,95,70,0.28);
+      --fd: 'DM Serif Display', Georgia, serif;
+      --fb: 'Outfit', system-ui, sans-serif;
+      --fm: 'DM Mono', 'Courier New', monospace;
     }
-
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: var(--fb); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
     .container { max-width: 920px; margin: 0 auto; padding: 0 28px; }
 
     /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(238,236,233,0.93); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 14px 0; }
-    nav .container { display: flex; justify-content: space-between; align-items: center; }
-    .nav-brand { font-family: var(--font-m); font-size: 13px; color: var(--teal); letter-spacing: 0.06em; }
-    .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: 13px; color: var(--text-2); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(238,236,233,0.93); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 13px 0; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .nav-brand { font-family: var(--fm); font-size: 13px; color: var(--teal); letter-spacing: 0.06em; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; color: var(--t2); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
+    .nav-cv { font-family: var(--fm); font-size: 11px; color: var(--teal); border: 1px solid var(--teal-bd); background: var(--teal-lt); padding: 5px 12px; border-radius: 5px; text-decoration: none; transition: background 0.18s; }
+    .nav-cv:hover { background: rgba(15,118,110,0.16); }
 
     /* HERO */
-    header { padding: 88px 0 72px; }
+    header { padding: 86px 0 70px; }
     .hero-grid { display: grid; grid-template-columns: 1fr 200px; gap: 60px; align-items: center; }
-    .eyebrow { font-family: var(--font-m); font-size: 11px; color: var(--teal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .eyebrow { font-family: var(--fm); font-size: 11px; color: var(--teal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--teal); }
-    h1 { font-family: var(--font-d); font-size: clamp(44px,5.5vw,64px); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; color: var(--text); }
+    h1 { font-family: var(--fd); font-size: clamp(44px,5.5vw,64px); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; color: var(--text); }
     h1 em { font-style: italic; color: var(--teal); }
-    .hero-role { font-size: 14px; color: var(--text-3); margin-top: 10px; margin-bottom: 22px; }
-    .hero-bio { font-size: 15px; color: var(--text-2); line-height: 1.85; font-weight: 300; max-width: 540px; }
+    .hero-role { font-size: 14px; color: var(--t3); margin-top: 10px; margin-bottom: 22px; }
+    .hero-bio { font-size: 15px; color: var(--t2); line-height: 1.9; font-weight: 300; max-width: 540px; }
     .hero-bio strong { color: var(--teal); font-weight: 500; }
+    .hero-bio p { margin-bottom: 14px; }
+    .hero-bio p:last-child { margin-bottom: 0; }
     .hero-cta { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.18s; font-family: var(--font-b); cursor: pointer; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.18s; font-family: var(--fb); cursor: pointer; }
     .btn-primary { background: var(--teal); color: #fff; border: 1px solid var(--teal); }
     .btn-primary:hover { background: #0d9488; }
-    .btn-ghost { background: var(--card); color: var(--text-2); border: 1px solid var(--border); }
+    .btn-ghost { background: var(--card); color: var(--t2); border: 1px solid var(--border); }
     .btn-ghost:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-lt); }
+    .btn-cv { background: transparent; color: var(--teal); border: 1px solid var(--teal-bd); font-family: var(--fm); font-size: 12px; padding: 9px 18px; }
+    .btn-cv:hover { background: var(--teal-lt); }
 
     /* AVATAR */
     .avatar-wrap { position: relative; width: 200px; }
@@ -75,91 +79,98 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: var(--surface2); overflow: hidden; display: flex; align-items: center; justify-content: center; }
     .avatar-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
-    .avatar-fallback { font-family: var(--font-d); font-size: 52px; color: var(--teal); }
-    .avatar-badge { position: absolute; bottom: 10px; right: 6px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 4px 11px; font-family: var(--font-m); font-size: 11px; color: var(--green); white-space: nowrap; display: flex; align-items: center; gap: 6px; }
-    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+    .avatar-fallback { font-family: var(--fd); font-size: 52px; color: var(--teal); }
+    .avatar-badge { position: absolute; bottom: 10px; right: 6px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 4px 11px; font-family: var(--fm); font-size: 11px; color: var(--green); white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+    .bdot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
     @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.35;} }
 
     /* SECTIONS */
     .section { padding: 64px 0; border-top: 1px solid var(--border); }
-    .sec-label { font-family: var(--font-m); font-size: 11px; color: var(--text-3); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
-    .sec-title { font-family: var(--font-d); font-size: clamp(26px,3.2vw,36px); font-weight: 400; color: var(--text); line-height: 1.2; margin-bottom: 36px; }
+    .sec-label { font-family: var(--fm); font-size: 11px; color: var(--t3); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+    .sec-title { font-family: var(--fd); font-size: clamp(26px,3.2vw,36px); font-weight: 400; color: var(--text); line-height: 1.2; margin-bottom: 36px; }
     .sec-title em { font-style: italic; color: var(--teal); }
-    .subsec { font-family: var(--font-m); font-size: 11px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; margin-top: 28px; }
+    .subsec { font-family: var(--fm); font-size: 11px; color: var(--t3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; margin-top: 28px; }
+
+    /* CAREER TIMELINE */
+    .career-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 16px; }
+    .career-header .sec-title { margin-bottom: 0; }
+    .ctl { display: flex; flex-direction: column; gap: 0; }
+    .ctl-row { display: grid; grid-template-columns: 130px 30px 1fr; gap: 0 16px; padding-bottom: 0; }
+    .ctl-row:not(:last-child) { padding-bottom: 8px; }
+    .ctl-date { font-family: var(--fm); font-size: 11px; color: var(--t3); text-align: right; padding-top: 14px; line-height: 1.4; }
+    .ctl-spine { display: flex; flex-direction: column; align-items: center; padding-top: 14px; }
+    .ctl-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .ctl-line { flex: 1; width: 1px; background: var(--border); margin-top: 6px; margin-bottom: 0; min-height: 24px; }
+    .ctl-row:last-child .ctl-line { display: none; }
+    .ctl-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin-bottom: 8px; }
+    .ctl-row:last-child .ctl-card { margin-bottom: 0; }
+    .ctl-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .ctl-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    .ctl-company { font-size: 13px; color: var(--t3); margin-top: 2px; }
+    .ctl-skills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .ctl-chip { font-family: var(--fm); font-size: 11px; color: var(--t3); background: var(--surface2); border: 1px solid var(--blt); border-radius: 4px; padding: 2px 7px; }
+    .ctl-chip.hi { color: var(--teal); background: var(--teal-lt); border-color: var(--teal-bd); }
+    .dot-now { background: var(--teal); box-shadow: 0 0 0 3px rgba(15,118,110,0.18); }
+    .dot-done2 { background: #10b981; }
+    .dot-old { background: var(--border); border: 1.5px solid var(--t3); }
 
     /* CHIPS */
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip { font-family: var(--font-m); font-size: 12px; padding: 5px 12px; border-radius: 5px; border: 1px solid; white-space: nowrap; }
+    .chip { font-family: var(--fm); font-size: 12px; padding: 5px 12px; border-radius: 5px; border: 1px solid; white-space: nowrap; }
     .ct { color: var(--teal);   border-color: var(--teal-bd);   background: var(--teal-lt); }
     .cb { color: var(--blue);   border-color: var(--blue-bd);   background: var(--blue-lt); }
     .ca { color: var(--amber);  border-color: var(--amber-bd);  background: var(--amber-lt); }
     .cp { color: var(--purple); border-color: var(--purple-bd); background: var(--purple-lt); }
-    .cm { color: var(--text-3); border-color: var(--border);    background: var(--surface2); }
+    .cm { color: var(--t3);     border-color: var(--border);    background: var(--surface2); }
 
-    /* PROJECT CARDS */
+    /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 18px; }
     .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 22px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.18s, box-shadow 0.18s; position: relative; overflow: hidden; }
     .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--card-accent,var(--teal)); opacity: 0; transition: opacity 0.18s; }
     .project-card:hover { border-color: #b8b4af; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
     .project-card:hover::before { opacity: 1; }
-    .p-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border-lt); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .p-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--blt); display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .p-name { font-size: 14px; font-weight: 500; color: var(--text); }
-    .p-desc { font-size: 13px; color: var(--text-2); line-height: 1.65; flex: 1; }
+    .p-desc { font-size: 13px; color: var(--t2); line-height: 1.65; flex: 1; }
     .p-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .p-tag { font-family: var(--font-m); font-size: 11px; color: var(--text-3); background: var(--surface2); border: 1px solid var(--border-lt); border-radius: 4px; padding: 2px 7px; }
-    .p-link { font-family: var(--font-m); font-size: 11px; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+    .p-tag { font-family: var(--fm); font-size: 11px; color: var(--t3); background: var(--surface2); border: 1px solid var(--blt); border-radius: 4px; padding: 2px 7px; }
+    .p-link { font-family: var(--fm); font-size: 11px; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 4px; margin-top: 2px; }
     .p-link:hover { text-decoration: underline; }
     .p-link::after { content: '→'; }
-    .soon { background: var(--surface); border: 1px dashed var(--border); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 8px; opacity: 0.6; }
-    .soon-lbl { font-family: var(--font-m); font-size: 11px; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; }
-    .soon-name { font-size: 14px; font-weight: 500; color: var(--text); }
-    .soon-sub { font-size: 12px; color: var(--text-3); line-height: 1.6; }
+    .p-status { font-family: var(--fm); font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 1px solid; align-self: flex-start; }
+    .ps-active { color: var(--teal);  border-color: var(--teal-bd);  background: var(--teal-lt); }
+    .ps-plan   { color: var(--t3);    border-color: var(--border);   background: var(--surface2); }
 
     /* CERTS */
     .certs { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
     .cert { display: flex; align-items: center; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
-    .cert-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border-lt); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .cert-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--blt); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
     .cert-body { flex: 1; }
     .cert-name { font-size: 14px; font-weight: 500; color: var(--text); }
-    .cert-meta { font-size: 12px; color: var(--text-3); margin-top: 2px; }
-    .badge { font-family: var(--font-m); font-size: 11px; padding: 4px 10px; border-radius: 20px; border: 1px solid; white-space: nowrap; flex-shrink: 0; }
-    .badge-earned   { color: var(--green); border-color: var(--green-bd); background: var(--green-lt); }
-    .badge-progress { color: var(--amber); border-color: var(--amber-bd); background: var(--amber-lt); }
-    .badge-planned  { color: var(--text-3); border-color: var(--border);  background: var(--surface2); }
-
-    /* TIMELINE */
-    .tl { display: flex; flex-direction: column; }
-    .tl-row { display: grid; grid-template-columns: 110px 28px 1fr; gap: 0 14px; padding-bottom: 26px; }
-    .tl-row:last-child { padding-bottom: 0; }
-    .tl-date { font-family: var(--font-m); font-size: 11px; color: var(--text-3); text-align: right; padding-top: 4px; }
-    .tl-spine { display: flex; flex-direction: column; align-items: center; }
-    .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-    .tl-line { flex: 1; width: 1px; background: var(--border); margin-top: 5px; }
-    .tl-row:last-child .tl-line { display: none; }
-    .tl-title { font-size: 14px; font-weight: 500; color: var(--text); }
-    .tl-sub { font-size: 12.5px; color: var(--text-2); margin-top: 3px; line-height: 1.55; }
-    .dot-done   { background: #10b981; }
-    .dot-active { background: var(--teal); box-shadow: 0 0 0 3px rgba(15,118,110,0.18); }
-    .dot-plan   { background: var(--border); border: 1.5px solid var(--text-3); }
+    .cert-meta { font-size: 12px; color: var(--t3); margin-top: 2px; }
+    .badge { font-family: var(--fm); font-size: 11px; padding: 4px 10px; border-radius: 20px; border: 1px solid; white-space: nowrap; flex-shrink: 0; }
+    .b-prog { color: var(--teal);  border-color: var(--teal-bd);  background: var(--teal-lt); }
+    .b-plan { color: var(--t3);    border-color: var(--border);   background: var(--surface2); }
+    .b-soon { color: var(--amber); border-color: var(--amber-bd); background: var(--amber-lt); }
 
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px; }
     .contact-card { display: flex; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; text-decoration: none; color: var(--text); transition: border-color 0.18s, background 0.18s; }
     .contact-card:hover { border-color: var(--teal); background: var(--teal-lt); }
-    .c-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border-lt); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-    .c-label { font-size: 12px; color: var(--text-3); }
+    .c-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--blt); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .c-label { font-size: 12px; color: var(--t3); }
     .c-val { font-size: 13px; font-weight: 500; color: var(--text); }
 
-    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 32px 0; }
-    .footer-text { font-family: var(--font-m); font-size: 11.5px; color: var(--text-3); text-align: center; line-height: 1.9; }
+    .footer-text { font-family: var(--fm); font-size: 11.5px; color: var(--t3); text-align: center; line-height: 1.9; }
     .footer-text span { color: var(--teal); }
 
     @media (max-width: 660px) {
       .hero-grid { grid-template-columns: 1fr; }
       .avatar-wrap { display: none; }
       header { padding: 60px 0 48px; }
-      .tl-row { grid-template-columns: 72px 24px 1fr; }
+      .ctl-row { grid-template-columns: 72px 24px 1fr; }
+      .nav-cv { display: none; }
     }
   </style>
 </head>
@@ -169,32 +180,50 @@
     <div class="container">
       <span class="nav-brand">HDAli00</span>
       <div class="nav-links">
-        <a href="#projects">Projects</a>
+        <a href="#career">Career</a>
         <a href="#stack">Stack</a>
+        <a href="#projects">Projects</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#contact">Contact</a>
+        <a href="https://github.com/HDAli00/cv/raw/main/Hassan_Ali_CV.pdf" class="nav-cv" download>↓ CV</a>
       </div>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header>
     <div class="container">
       <div class="hero-grid">
         <div>
           <p class="eyebrow">Platform Engineer · Netherlands</p>
           <h1>Hassan<br><em>Ali</em></h1>
-          <p class="hero-role">Capgemini · ASML · Building platform infrastructure that scales</p>
-          <p class="hero-bio">
-            From civil engineering blueprints to cloud-native architectures — I design the
-            infrastructure that lets software teams ship faster.
-            Currently building <strong>observability platforms</strong> at ASML using
-            OpenTelemetry, Grafana, and Kubernetes, while systematically closing the gap toward
-            <strong>Platform Architect</strong>. I believe platforms are products, and
-            <strong>developer experience is a first-class concern</strong>.
-          </p>
+          <p class="hero-role">Capgemini · ASML · Platform infrastructure at scale</p>
+          <div class="hero-bio">
+            <p>
+              Engineering is just puzzle-solving with stakes. That's what drew me in —
+              at Fugro it was levee calculations and hydraulic models, figuring out
+              how water behaves under pressure. Alongside that I got into
+              <strong>data science</strong>, a new arena to explore with the same mindset.
+            </p>
+            <p>
+              From there the curiosity kept going. Data science led naturally into
+              data engineering — <strong>PySpark pipelines, Azure Synapse, Databricks</strong> —
+              and then into platform work, where the question shifted from
+              "does the pipeline run" to "can anyone actually see what it's doing."
+              That's what brought me to observability. At ASML that meant building
+              the instrumentation layer — <strong>OpenTelemetry, Grafana, Kubernetes</strong> —
+              the infrastructure other engineers rely on without thinking about it.
+            </p>
+            <p>
+              The exploration continues — platform engineering, cloud architecture,
+              and everything that connects data to production systems at scale.
+              This is where I'm going deep next. Follow along.
+            </p>
+          </div>
           <div class="hero-cta">
             <a href="https://github.com/HDAli00" class="btn btn-primary" target="_blank">GitHub Profile ↗</a>
             <a href="#projects" class="btn btn-ghost">View Projects</a>
+            <a href="https://github.com/HDAli00/cv/raw/main/Hassan_Ali_CV.pdf" class="btn btn-cv" download>↓ Download CV</a>
           </div>
         </div>
         <div class="avatar-wrap">
@@ -204,12 +233,124 @@
               <div class="avatar-fallback" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">HA</div>
             </div>
           </div>
-          <div class="avatar-badge"><div class="badge-dot"></div>available</div>
+          <div class="avatar-badge"><div class="bdot"></div>available</div>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- CAREER -->
+  <section class="section" id="career">
+    <div class="container">
+      <div class="career-header">
+        <div>
+          <p class="sec-label">// experience</p>
+          <h2 class="sec-title">Career <em>arc</em></h2>
+        </div>
+        <a href="https://github.com/HDAli00/cv/raw/main/Hassan_Ali_CV.pdf" class="btn btn-cv" download>↓ Download CV</a>
+      </div>
+      <div class="ctl">
+
+        <div class="ctl-row">
+          <div class="ctl-date">Jan 2025 – now</div>
+          <div class="ctl-spine"><div class="ctl-dot dot-now"></div><div class="ctl-line"></div></div>
+          <div>
+            <div class="ctl-card">
+              <div class="ctl-top">
+                <div>
+                  <div class="ctl-title">Data Engineer / Platform Engineer</div>
+                  <div class="ctl-company">Capgemini · client: ASML (ends Apr 2026)</div>
+                </div>
+              </div>
+              <div class="ctl-skills">
+                <span class="ctl-chip hi">OpenTelemetry</span>
+                <span class="ctl-chip hi">Grafana</span>
+                <span class="ctl-chip hi">Kubernetes</span>
+                <span class="ctl-chip hi">Jenkins</span>
+                <span class="ctl-chip hi">Helm</span>
+                <span class="ctl-chip hi">Ansible</span>
+                <span class="ctl-chip hi">Docker</span>
+                <span class="ctl-chip hi">AWS</span>
+                <span class="ctl-chip hi">Databricks</span>
+                <span class="ctl-chip">PySpark</span>
+                <span class="ctl-chip">Python</span>
+                <span class="ctl-chip">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctl-row">
+          <div class="ctl-date">2024</div>
+          <div class="ctl-spine"><div class="ctl-dot dot-done2"></div><div class="ctl-line"></div></div>
+          <div>
+            <div class="ctl-card">
+              <div class="ctl-top">
+                <div>
+                  <div class="ctl-title">Data Scientist</div>
+                  <div class="ctl-company">Utrecht University</div>
+                </div>
+              </div>
+              <div class="ctl-skills">
+                <span class="ctl-chip">Python</span>
+                <span class="ctl-chip">Random Forest</span>
+                <span class="ctl-chip">ML Research</span>
+                <span class="ctl-chip">+34% accuracy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctl-row">
+          <div class="ctl-date">2023 – 2024</div>
+          <div class="ctl-spine"><div class="ctl-dot dot-done2"></div><div class="ctl-line"></div></div>
+          <div>
+            <div class="ctl-card">
+              <div class="ctl-top">
+                <div>
+                  <div class="ctl-title">Data Scientist</div>
+                  <div class="ctl-company">Damen Shipyards</div>
+                </div>
+              </div>
+              <div class="ctl-skills">
+                <span class="ctl-chip hi">Azure Synapse</span>
+                <span class="ctl-chip hi">Azure DevOps</span>
+                <span class="ctl-chip">PySpark</span>
+                <span class="ctl-chip">Azure Key Vault</span>
+                <span class="ctl-chip">Azure SQL</span>
+                <span class="ctl-chip">Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctl-row">
+          <div class="ctl-date">2021 – 2022</div>
+          <div class="ctl-spine"><div class="ctl-dot dot-old"></div><div class="ctl-line"></div></div>
+          <div>
+            <div class="ctl-card">
+              <div class="ctl-top">
+                <div>
+                  <div class="ctl-title">Hydraulic Engineer</div>
+                  <div class="ctl-company">Fugro</div>
+                </div>
+              </div>
+              <div class="ctl-skills">
+                <span class="ctl-chip">Python</span>
+                <span class="ctl-chip">pandas</span>
+                <span class="ctl-chip">numpy</span>
+                <span class="ctl-chip">scipy</span>
+                <span class="ctl-chip">Civil Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
   <section class="section" id="stack">
     <div class="container">
       <p class="sec-label">// tech stack</p>
@@ -245,142 +386,122 @@
         <span class="chip cp">Python</span>
         <span class="chip cp">Bash</span>
         <span class="chip cp">YAML</span>
-        <span class="chip cm">Go (learning)</span>
+
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="container">
       <p class="sec-label">// projects</p>
-      <h2 class="sec-title">Things I've <em>built</em></h2>
+      <h2 class="sec-title">Things I'm <em>building</em></h2>
       <div class="projects-grid">
-        <a href="https://github.com/HDAli00/terraform" class="project-card" style="--card-accent:var(--blue);" target="_blank">
+
+        <a href="https://github.com/HDAli00/terraform-associate-labs" class="project-card" style="--card-accent:var(--blue);" target="_blank">
           <div class="p-icon">🏗️</div>
+          <span class="p-status ps-active">Active</span>
           <div class="p-name">Terraform Associate Labs</div>
-          <p class="p-desc">Hands-on exercises covering every HashiCorp Terraform Associate exam objective — modules, remote state, workspaces, provisioners, and AWS provider deep-dives.</p>
+          <p class="p-desc">Full exam coverage — modules, remote state, workspaces, provisioners, AWS provider. Built alongside Terraform 004 prep.</p>
           <div class="p-tags"><span class="p-tag">Terraform</span><span class="p-tag">AWS</span><span class="p-tag">IaC</span></div>
           <span class="p-link">View on GitHub</span>
         </a>
-        <div class="soon">
-          <div class="p-icon" style="opacity:.5;">☁️</div>
-          <span class="soon-lbl">In progress · Q2 2025</span>
-          <div class="soon-name">AWS SAA Study Labs</div>
-          <div class="soon-sub">Practical labs covering IAM, VPC, EKS, and cost architecture.</div>
+
+        <div class="project-card" style="--card-accent:var(--amber);">
+          <div class="p-icon">☁️</div>
+          <span class="p-status ps-active">In Progress · Q2 2026</span>
+          <div class="p-name">AWS SAA Study Labs</div>
+          <p class="p-desc">Hands-on labs across IAM, VPC, EKS, RDS, and cost architecture. Structured around AWS SAA exam objectives.</p>
+          <div class="p-tags"><span class="p-tag">AWS</span><span class="p-tag">IAM</span><span class="p-tag">VPC</span><span class="p-tag">EKS</span></div>
         </div>
-        <div class="soon">
-          <div class="p-icon" style="opacity:.5;">🤖</div>
-          <span class="soon-lbl">Planned · Q3 2025</span>
-          <div class="soon-name">AI Platform Agent</div>
-          <div class="soon-sub">LangGraph · MCP Server · ECS → EKS · React control-plane UI.</div>
+
+        <div class="project-card" style="--card-accent:var(--teal);">
+          <div class="p-icon">📦</div>
+          <span class="p-status ps-plan">Planned · Q3 2026</span>
+          <div class="p-name">AWS ECS Project</div>
+          <p class="p-desc">Production-grade containerised workloads on ECS — task definitions, service mesh, autoscaling, and GitHub Actions CI/CD.</p>
+          <div class="p-tags"><span class="p-tag">AWS ECS</span><span class="p-tag">Docker</span><span class="p-tag">GitHub Actions</span></div>
         </div>
-        <div class="soon">
-          <div class="p-icon" style="opacity:.5;">🔭</div>
-          <span class="soon-lbl">Planned · Q4 2025</span>
-          <div class="soon-name">Observability Stack</div>
-          <div class="soon-sub">OTel collector + Grafana + Loki on Kubernetes with ArgoCD GitOps.</div>
+
+        <div class="project-card" style="--card-accent:var(--purple);">
+          <div class="p-icon">⎈</div>
+          <span class="p-status ps-plan">Planned · Q3 2026</span>
+          <div class="p-name">EKS Project</div>
+          <p class="p-desc">Migrate ECS workloads to EKS. Helm charts, Kustomize overlays, ArgoCD GitOps, multi-tenant namespace isolation.</p>
+          <div class="p-tags"><span class="p-tag">EKS</span><span class="p-tag">Helm</span><span class="p-tag">ArgoCD</span><span class="p-tag">Kustomize</span></div>
         </div>
+
+        <div class="project-card" style="--card-accent:var(--teal);">
+          <div class="p-icon">🤖</div>
+          <span class="p-status ps-plan">Planned · Q3–Q4 2026</span>
+          <div class="p-name">AI Platform Engineering Agent</div>
+          <p class="p-desc">LangGraph-powered agent with MCP server, deployed ECS → EKS. React platform control-plane UI. GitHub Actions CI/CD throughout.</p>
+          <div class="p-tags"><span class="p-tag">LangGraph</span><span class="p-tag">MCP</span><span class="p-tag">EKS</span><span class="p-tag">React</span></div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ROADMAP -->
   <section class="section" id="roadmap">
     <div class="container">
-      <p class="sec-label">// certifications &amp; roadmap</p>
+      <p class="sec-label">// certifications</p>
       <h2 class="sec-title">Learning <em>in public</em></h2>
       <div class="certs">
-        <div class="cert">
-          <div class="cert-icon">🧱</div>
-          <div class="cert-body">
-            <div class="cert-name">Databricks Certified Associate Developer</div>
-            <div class="cert-meta">Databricks · Completed</div>
-          </div>
-          <span class="badge badge-earned">Earned</span>
-        </div>
+
         <div class="cert">
           <div class="cert-icon">🟠</div>
           <div class="cert-body">
-            <div class="cert-name">HashiCorp Terraform Associate (003)</div>
-            <div class="cert-meta">HashiCorp · Target: April 20, 2025</div>
+            <div class="cert-name">HashiCorp Terraform Associate (004)</div>
+            <div class="cert-meta">HashiCorp · Target: April 21, 2026</div>
           </div>
-          <span class="badge badge-progress">In Prep</span>
+          <span class="badge b-prog">In Prep</span>
         </div>
+
+        <div class="cert">
+          <div class="cert-icon">☸️</div>
+          <div class="cert-body">
+            <div class="cert-name">Kubernetes and Cloud Native Associate (KCNA)</div>
+            <div class="cert-meta">CNCF · Target: late April 2026</div>
+          </div>
+          <span class="badge b-soon">Up next</span>
+        </div>
+
         <div class="cert">
           <div class="cert-icon">☁️</div>
           <div class="cert-body">
             <div class="cert-name">AWS Solutions Architect Associate</div>
-            <div class="cert-meta">Amazon Web Services · Target: July 28, 2025</div>
+            <div class="cert-meta">Amazon Web Services · Target: July 28, 2026</div>
           </div>
-          <span class="badge badge-planned">Planned</span>
+          <span class="badge b-plan">Planned</span>
         </div>
+
         <div class="cert">
           <div class="cert-icon">⎈</div>
           <div class="cert-body">
             <div class="cert-name">Certified Kubernetes Application Developer (CKAD)</div>
-            <div class="cert-meta">CNCF · Target: December 15, 2025</div>
+            <div class="cert-meta">CNCF · Target: December 15, 2026</div>
           </div>
-          <span class="badge badge-planned">Planned</span>
+          <span class="badge b-plan">Planned</span>
         </div>
-      </div>
 
-      <p class="sec-label" style="margin-bottom:22px;">2025 Engineering Roadmap</p>
-      <div class="tl">
-        <div class="tl-row">
-          <span class="tl-date">Q1 2025</span>
-          <div class="tl-spine"><div class="tl-dot dot-done"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-title">Platform Engineering @ ASML</div>
-            <div class="tl-sub">OTel instrumentation, Grafana, Jenkins CI/CD. Terraform fundamentals.</div>
-          </div>
-        </div>
-        <div class="tl-row">
-          <span class="tl-date">Apr 2025</span>
-          <div class="tl-spine"><div class="tl-dot dot-active"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-title">Terraform Associate Exam</div>
-            <div class="tl-sub">Hands-on labs published. Exam date: April 20.</div>
-          </div>
-        </div>
-        <div class="tl-row">
-          <span class="tl-date">Jul 2025</span>
-          <div class="tl-spine"><div class="tl-dot dot-plan"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-title">AWS Solutions Architect Associate</div>
-            <div class="tl-sub">VPC, IAM, EKS, cost architecture deep-dives.</div>
-          </div>
-        </div>
-        <div class="tl-row">
-          <span class="tl-date">Jul–Sep 2025</span>
-          <div class="tl-spine"><div class="tl-dot dot-plan"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-title">AI Platform Agent Project</div>
-            <div class="tl-sub">LangGraph · MCP Server · ECS → EKS · React control-plane UI.</div>
-          </div>
-        </div>
-        <div class="tl-row">
-          <span class="tl-date">Q4 2025</span>
-          <div class="tl-spine"><div class="tl-dot dot-plan"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-title">CKAD + GitOps Sprint</div>
-            <div class="tl-sub">ArgoCD, Airflow orchestration, GitHub Actions depth. Exam: December 15.</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container">
       <p class="sec-label">// contact</p>
       <h2 class="sec-title">Let's <em>connect</em></h2>
-      <p style="color:var(--text-2);font-size:15px;margin-bottom:28px;max-width:500px;font-weight:300;line-height:1.8;">
-        Open to platform engineering roles and conversations about cloud-native infrastructure,
-        observability, and developer platforms. Based in the Netherlands.
+      <p style="color:var(--t2);font-size:15px;margin-bottom:28px;max-width:500px;font-weight:300;line-height:1.8;">
+        Building in public from the Netherlands. Reach out if you want to talk platform engineering, cloud-native infrastructure, or observability.
       </p>
       <div class="contact-grid">
         <a href="https://github.com/HDAli00" class="contact-card" target="_blank">
           <div class="c-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text-2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--t2);">
               <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
             </svg>
           </div>
@@ -398,17 +519,13 @@
           <div class="c-icon">📍</div>
           <div><div class="c-label">Location</div><div class="c-val">Netherlands</div></div>
         </div>
-        <div class="contact-card" style="cursor:default;">
-          <div class="c-icon" style="background:var(--green-lt);border-color:var(--green-bd);color:var(--green);font-size:14px;font-weight:600;">✓</div>
-          <div><div class="c-label">Status</div><div class="c-val" style="color:var(--green);">Open to roles</div></div>
-        </div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p class="footer-text">Built with HTML · Hosted on <span>GitHub Pages</span><br>Hassan Ali · <span>HDAli00</span> · 2025</p>
+      <p class="footer-text">Built with HTML · Hosted on <span>GitHub Pages</span><br>Hassan Ali · <span>HDAli00</span> · 2026</p>
     </div>
   </footer>
 
