@@ -1,6 +1,6 @@
-# 🚀 Platform Engineering Portfolio
+# 🚀 Hassan's Portfolio
 
-Hey there! I'm **Hassan Ali**, a Platform Engineer building **scalable infrastructure at scale**.
+Hey there! I'm **Hassan Ali**, a Engineer building **scalable infrastructure at scale**.
 
 ## What's Here?
 
